@@ -1,3 +1,3 @@
 # Joby
-[Preview](https://roma-kamenivskyi.github.io/new/)
+[Preview](https://roma-kamenivskyi.github.io/Joby-test-project/)
 # Some changes
