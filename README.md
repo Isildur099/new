@@ -1,3 +1,3 @@
-# new
+# Joby
 [Preview](https://roma-kamenivskyi.github.io/new/)
 # Some changes
