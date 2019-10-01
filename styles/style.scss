@@ -132,29 +132,36 @@ a {
   font-weight: 400;
   line-height: 2.4rem;
   text-transform: uppercase;
-  &:after {
-    display: block;
-    content: "";
-    height: 1px;
-    background-color: #fff;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    transition: transform 0.4s ease;
-  }
-  &:hover {
-    &:after {
-      transform: scale(1);
-    }
-  }
+
   &:last-child {
     margin-right: 0;
   }
   a {
+    position: relative;
     color: #ffffff;
     text-decoration: none;
     padding: 1.5rem;
-    &:focus {
-      background-color: #409d16;
+
+    &:before {
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 0;
+      content: "";
+      height: 1px;
+      background-color: #fff;
+      transition: width 0.4s ease;
+    }
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+      &:focus {
+        background-color: #409d16;
+        &:before {
+          width: 0%;
+        }
+      }
     }
   }
 }
@@ -638,6 +645,12 @@ a {
   align-items: center;
   padding-bottom: 7.3rem;
   text-align: center;
+  .logo {
+    transition: 0.5s;
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
   p {
     @extend .services-paragraph;
     margin-top: 3.3rem;
