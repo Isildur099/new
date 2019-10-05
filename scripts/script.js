@@ -1,14 +1,21 @@
 window.onload = function() {
-  const menu = document.querySelector(".mobile-menu");
-  const nav = document.querySelector(".mobile-nav");
-  const close = document.querySelector(".close-menu");
+  const toggleMobileNav = document.querySelector(".toggle-mobile-nav");
+  const mobileNav = document.querySelector(".mobile-nav");
   const images = document.querySelectorAll(".carousel-logos img");
   const btn_prev = document.querySelector(".btn-prev");
   const btn_next = document.querySelector(".btn-next");
 
-  menu.addEventListener("click", e => {
+  // Mobile burger menu
+  const icon = toggleMobileNav.querySelector("i.fa");
+  toggleMobileNav.addEventListener("click", function(e) {
     e.preventDefault();
-    nav.classList.toggle("visible");
+    if (icon.classList.contains("fa-bars")) {
+      icon.className = "fa fa-close";
+      mobileNav.classList.add("visible");
+    } else {
+      icon.className = "fa fa-bars";
+      mobileNav.classList.remove("visible");
+    }
   });
 
   // Mobile Slider
@@ -33,18 +40,19 @@ window.onload = function() {
     images[i].style.opacity = "1";
   });
 
-  // Scroll to top
+  // to top
   const top = document.querySelector("#top");
   const btnToTop = document.querySelector("#btnToTop");
 
+  // Display button when scroll
   document.addEventListener("scroll", function() {
     if (window.pageYOffset > 400 || this.documentElement.scrollTop > 400) {
-      btnToTop.style.opacity = "1";
+      btnToTop.classList.add("visible");
     } else {
-      btnToTop.style.opacity = "0";
+      btnToTop.classList.remove("visible");
     }
   });
-
+  // Scroll to top
   btnToTop.addEventListener("click", () => {
     top.scrollIntoView({
       behavior: "smooth",

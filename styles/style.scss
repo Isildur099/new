@@ -76,17 +76,12 @@ a {
   list-style-type: none;
   display: flex;
 }
-.mobile-menu {
-  display: block;
-  color: #ffffff;
-  font-size: 25px;
-  display: none;
-}
-.close-menu {
-  display: none;
+.toggle-mobile-nav {
   color: #ffffff;
   font-size: 30px;
+  display: none;
 }
+
 .mobile-nav {
   position: absolute;
   top: 100%;
@@ -98,14 +93,12 @@ a {
 }
 .visible {
   visibility: visible !important;
-  opacity: 1;
+  opacity: 1 !important;
 }
-.hide {
-  display: none !important;
-}
-.show-img {
+.show {
   display: block;
 }
+
 .mobile-item {
   a {
     display: block;
@@ -203,6 +196,11 @@ a {
   font-size: 1.8rem;
   font-weight: 800;
   text-transform: uppercase;
+  transition: 0.4s ease;
+  &:hover {
+    box-shadow: 0px 0px 10px #73e040, 0px 0px 40px #73e040, 0px 0px 80px #73e040;
+    background-color: #73e040;
+  }
 }
 .separator {
   height: 1px;
@@ -414,7 +412,7 @@ a {
 /*Our-workers section start*/
 .our-workers {
   background-color: #2ca7e0;
-  background-image: url("../images/workers-bg.png");
+  background-image: url("../images/workers-bg.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -812,6 +810,7 @@ a {
 // Button to top
 .button-to-top {
   opacity: 0;
+  visibility: hidden;
   position: fixed;
   bottom: 20px;
   right: 20px;

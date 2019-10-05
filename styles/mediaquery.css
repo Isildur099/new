@@ -6,7 +6,7 @@
   .main-navigation {
     display: none;
   }
-  .mobile-menu {
+  .toggle-mobile-nav {
     display: block;
   }
   .header-middle {
