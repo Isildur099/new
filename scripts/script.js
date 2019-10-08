@@ -1,4 +1,6 @@
 window.onload = function() {
+  new WOW({ offset: 100 }).init();
+
   const toggleMobileNav = document.querySelector(".toggle-mobile-nav");
   const mobileNav = document.querySelector(".mobile-nav");
   const images = document.querySelectorAll(".carousel-logos img");
