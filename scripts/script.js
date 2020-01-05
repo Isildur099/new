@@ -9,7 +9,7 @@ window.onload = function() {
 
   // Mobile burger menu
   const icon = toggleMobileNav.querySelector("i.fa");
-  toggleMobileNav.addEventListener("click", function(e) {
+  toggleMobileNav.addEventListener("click", e => {
     e.preventDefault();
     if (icon.classList.contains("fa-bars")) {
       icon.className = "fa fa-close";
